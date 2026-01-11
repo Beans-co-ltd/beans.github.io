@@ -282,7 +282,7 @@ img {
 
 /* About Section */
 .about {
-  background-color: var(--color-white);
+  background-color: #f8f9fa;
 }
 
 .about-content {
@@ -551,22 +551,48 @@ img {
    Car Collection Section (Delivery Examples)
    ========================================= */
 .car-collection {
-  background-color: #f8f9fa; /* Slight grey background to distinguish */
+  background-color: #f8f9fa;
 }
 
 .car-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
+  display: flex;
+  gap: var(--spacing-sm);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Scrollbar styling */
+.car-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.car-grid::-webkit-scrollbar-track {
+  background: var(--color-gray-light);
+  border-radius: 4px;
+}
+
+.car-grid::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+.car-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
 }
 
 .car-card {
+  flex: 0 0 300px;
+  min-width: 300px;
   background: var(--color-white);
-  border-radius: 0; /* Boxy but premium */
+  border-radius: 0;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.05);
+  scroll-snap-align: start;
 }
 
 .car-card:hover {
@@ -647,13 +673,14 @@ img {
 }
 
 /* =========================================
-   Company & Store Section
+/* =========================================
+   Store Introduction Section
    ========================================= */
-.company-store {
-  background: linear-gradient(180deg, #f8f9fa 0%, var(--color-white) 100%);
+.store-introduction {
+  background-color: #f8f9fa;
 }
 
-.company-store-layout {
+.store-intro-layout {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-lg);
@@ -661,9 +688,23 @@ img {
 }
 
 @media (min-width: 992px) {
-  .company-store-layout {
+  .store-intro-layout {
     grid-template-columns: 1.2fr 1fr;
   }
+}
+
+.store-text h3 {
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.store-text p {
+  color: var(--color-text-light);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
 }
 
 /* Store Images Grid */
@@ -696,26 +737,48 @@ img {
   transform: scale(1.03);
 }
 
-/* Store Info Card */
-.store-info-card {
-  background: var(--color-white);
-  padding: var(--spacing-lg);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+/* =========================================
+   Company Information Section
+   ========================================= */
+.company-info-section {
+  background-color: var(--color-white);
+  padding-bottom: var(--spacing-xl);
 }
 
-.store-info-card h3 {
+.company-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+@media (min-width: 992px) {
+  .company-container {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.company-details-card {
+  padding: 0;
+}
+
+.company-details-card h3 {
   font-size: 2rem;
   color: var(--color-primary);
   margin-bottom: var(--spacing-sm);
   font-weight: 700;
 }
 
-.store-tagline {
-  color: var(--color-text-light);
-  margin-bottom: var(--spacing-md);
-  line-height: 1.8;
+.map-container {
+  height: 100%;
+  min-height: 350px;
+  background: #f0f0f0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
 }
+
+
 
 .store-features {
   list-style: none;
@@ -784,25 +847,52 @@ img {
 /* Instagram Section */
 .instagram {
   background-color: var(--color-white);
+}
+
+.instagram-feed-wrapper {
+  margin-bottom: var(--spacing-md);
+}
+
+.feed-placeholder {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px dashed var(--color-gray-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl) var(--spacing-md);
   text-align: center;
-  padding: var(--spacing-lg) 0;
+  color: var(--color-text-light);
 }
 
-.instagram-content {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.instagram-icon-large {
+.feed-placeholder i {
   font-size: 4rem;
-  color: #e1306c; /* Instagram Color */
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: var(--spacing-sm);
+  display: block;
 }
 
-.instagram-title {
-  font-size: 2rem;
+.feed-placeholder p {
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+}
+
+.feed-placeholder small {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.delivery-examples {
+  background-color: #f8f9fa;
+}
+
+.delivery-cta {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
 }
 
 .btn-instagram {
@@ -816,13 +906,20 @@ img {
   );
   color: white;
   box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4);
-  margin-top: var(--spacing-sm);
 }
 
 .btn-instagram:hover {
   transform: translateY(-2px);
   filter: brightness(1.1);
   box-shadow: 0 6px 20px rgba(220, 39, 67, 0.5);
+}
+
+.order-sales {
+  background-color: var(--color-white);
+}
+
+.support {
+  background-color: var(--color-white);
 }
 
 /* Order Sales Intro */
