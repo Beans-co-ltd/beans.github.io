@@ -15,11 +15,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Placeholder for FontAwesome, might need CDN if this one is old/invalid. Using a standard CDN below instead for safety -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -29,13 +24,15 @@
     <!-- Header -->
     <header class="header">
       <div class="container header-container">
-        <a href="#" class="logo">Beans</a>
+        <a href="#" class="logo">
+          <img src="assets/images/logo.png" alt="Beans" class="logo-img" />
+        </a>
         <nav class="nav">
           <ul class="nav-list">
-            <li><a href="#about">私たちについて</a></li>
-            <li><a href="#service">サービス内容</a></li>
-            <li><a href="#flow">購入の流れ</a></li>
-            <li><a href="#contact">アクセス</a></li>
+            <li><a href="#car-collection">納車事例</a></li>
+            <li><a href="#order-sales">オーダー販売</a></li>
+            <li><a href="#support">サポート</a></li>
+            <li><a href="#contact">店舗・お問い合わせ</a></li>
           </ul>
         </nav>
         <a href="#contact" class="btn btn-primary header-btn">お問い合わせ</a>
@@ -61,89 +58,124 @@
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section about">
+    <!-- Car Collection Section (Premium Showcase) -->
+    <section id="car-collection" class="section car-collection">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">Concept</h2>
-          <p class="section-subtitle">私たちについて</p>
+          <h2 class="section-title">Delivery Examples</h2>
+          <p class="section-subtitle">納車事例</p>
+          <p class="section-description">
+            これまでにオーダーいただき、納車させていただいた車両の一部をご紹介します。<br />
+            メーカー・車種問わず、あらゆる一台をお探しします。
+          </p>
         </div>
-        <div class="about-content">
-          <div class="about-text">
-            <h3>「探す」から「出会う」へ。</h3>
-            <p>
-              中古車選びは、単なる移動手段の購入ではありません。<br />
-              それは、これからのあなたの生活をより豊かにするためのパートナー選びです。
-            </p>
-            <p>
-              株式会社Beansは、在庫を持ちません。<br />
-              それは、限られた選択肢の中から選んでいただくのではなく、<br />
-              日本中の膨大な選択肢の中から、あなたに「本当にぴったりな一台」を見つけ出したいからです。
-            </p>
-            <p>
-              初めての車選びも、乗り換えのご相談も、そしてローン審査への不安も。<br />
-              私たちにお任せください。親身になって、あなたのカーライフをサポートします。
-            </p>
-          </div>
+
+        <div class="car-grid">
+          <!-- Car 1 -->
+          <article class="car-card">
+            <div class="car-image-wrapper">
+              <img src="assets/images/car_1.jpg" alt="Mitsubishi" />
+              <span class="delivery-tag">Sourced</span>
+            </div>
+            <div class="car-info">
+              <h3 class="car-name">Mitsubishi eK Space</h3>
+              <p class="car-detail">Custom Order / Black</p>
+            </div>
+          </article>
+
+          <!-- Car 2 -->
+          <article class="car-card">
+            <div class="car-image-wrapper">
+              <img src="assets/images/car_2.jpg" alt="BMW" />
+              <span class="delivery-tag">Sourced</span>
+            </div>
+            <div class="car-info">
+              <h3 class="car-name">BMW 5 Series</h3>
+              <p class="car-detail">M Sport / White</p>
+            </div>
+          </article>
+
+          <!-- Car 3 -->
+          <article class="car-card">
+            <div class="car-image-wrapper">
+              <img src="assets/images/car_3.jpg" alt="Toyota Voxy" />
+              <span class="delivery-tag">Sourced</span>
+            </div>
+            <div class="car-info">
+              <h3 class="car-name">Toyota Voxy</h3>
+              <p class="car-detail">Hybrid / Dark Blue</p>
+            </div>
+          </article>
+
+          <!-- Car 4 -->
+          <article class="car-card">
+            <div class="car-image-wrapper">
+              <img src="assets/images/car_4.jpg" alt="Toyota Hiace" />
+              <span class="delivery-tag">Sourced</span>
+            </div>
+            <div class="car-info">
+              <h3 class="car-name">Toyota Hiace</h3>
+              <p class="car-detail">Super GL / White</p>
+            </div>
+          </article>
+
+          <!-- Car 5 -->
+          <article class="car-card">
+            <div class="car-image-wrapper">
+              <img src="assets/images/car_5.jpg" alt="Toyota Roomy" />
+              <span class="delivery-tag">Sourced</span>
+            </div>
+            <div class="car-info">
+              <h3 class="car-name">Toyota Roomy</h3>
+              <p class="car-detail">Custom G / Pearl White</p>
+            </div>
+          </article>
+        </div>
+        <div class="view-more-wrapper">
+          <a href="#contact" class="btn btn-outline">
+            欲しい車を相談する <i class="fa-solid fa-arrow-right"></i>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Service Section -->
-    <section id="service" class="section service">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Service</h2>
-          <p class="section-subtitle">サービス内容</p>
-        </div>
-        <div class="service-grid">
-          <!-- Service 1 -->
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-car-side"></i>
-            </div>
-            <h3>注文販売 (Vehicle Sourcing)</h3>
-            <p>
-              ご希望の車種、予算、ライフスタイルを詳しくヒアリング。<br />
-              プロの目利きで、全国の業者オークションから最高の一台を探し出します。<br />
-              在庫コストをカットすることで、適正価格でのご提供を実現します。
-            </p>
-          </div>
-          <!-- Service 2 -->
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-hand-holding-heart"></i>
-            </div>
-            <h3>お支払いサポート (Financial Support)</h3>
-            <p>
-              「ローンが通るか心配...」そんなお悩みをお持ちの方も、まずはご相談ください。<br />
-              お客様一人ひとりの状況に合わせた、無理のないお支払いプランを一緒に考えさせていただきます。<br />
-              <small>※ 秘密厳守・相談無料</small>
-            </p>
-          </div>
-          <!-- Service 3 -->
-          <div class="service-card">
-            <div class="service-icon">
-              <i class="fa-solid fa-screwdriver-wrench"></i>
-            </div>
-            <h3>アフターサポート (Support)</h3>
-            <p>
-              納車して終わりではありません。<br />
-              日々のメンテナンスから車検、万が一のトラブルまで。<br />
-              地域密着ならではのフットワークで、末永くサポートいたします。
-            </p>
-          </div>
+    <!-- Instagram Section (3) -->
+    <section id="instagram" class="section instagram">
+      <div class="container instagram-container">
+        <div class="instagram-content">
+          <i class="fa-brands fa-instagram instagram-icon-large"></i>
+          <h2 class="instagram-title">Official Instagram</h2>
+          <p class="instagram-text">
+            最新の入庫情報や納車事例を毎日更新中！<br />ぜひチェックしてください。
+          </p>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            class="btn btn-instagram"
+          >
+            <i class="fa-brands fa-instagram"></i> Instagramを見る
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Flow Section -->
-    <section id="flow" class="section flow">
+    <!-- Order Sales Section (4 & 5) -->
+    <section id="order-sales" class="section order-sales">
       <div class="container">
         <div class="section-header">
-          <h2 class="section-title">How it works</h2>
-          <p class="section-subtitle">オーダー販売の流れ</p>
+          <h2 class="section-title">Order Sales</h2>
+          <p class="section-subtitle">注文販売について</p>
         </div>
+
+        <div class="order-sales-intro">
+          <h3>「あなただけの一台」を、<br />日本中から探します。</h3>
+          <p>
+            ご希望の車種、予算、ライフスタイルを詳しくヒアリング。<br />
+            プロの目利きで、全国の業者オークションから最高の一台を探し出します。<br />
+            在庫コストをカットすることで、適正価格でのご提供を実現します。
+          </p>
+        </div>
+
         <div class="flow-steps">
           <div class="step">
             <div class="step-number">01</div>
@@ -185,66 +217,118 @@
       </div>
     </section>
 
-    <!-- Shop Gallery Section -->
-    <section id="gallery" class="section gallery">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Shop Gallery</h2>
-                <p class="section-subtitle">店舗の雰囲気</p>
-                <p class="section-description">
-                    お客様にリラックスしていただけるよう、明るく清潔感のある店内を心がけています。<br>
-                    キッズスペースも完備しておりますので、お子様連れでも安心してご来店ください。
-                </p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item item-large">
-                    <img src="assets/images/shop_exterior.jpg" alt="店舗外観">
-                    <div class="gallery-caption">広々とした店舗外観</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/shop_interior.jpg" alt="商談スペース">
-                    <div class="gallery-caption">落ち着いた商談スペース</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/shop_kids.jpg" alt="キッズスペース">
-                    <div class="gallery-caption">キッズスペース完備</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="assets/images/shop_entrance.jpg" alt="エントランス">
-                    <div class="gallery-caption">皆様をお出迎えするエントランス</div>
-                </div>
-            </div>
+    <!-- About Section (5 - Description) -->
+    <section id="about" class="section about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Concept</h2>
+          <p class="section-subtitle">私たちについて</p>
         </div>
+        <div class="about-content">
+          <div class="about-text">
+            <h3>「探す」から「出会う」へ。</h3>
+            <p>
+              中古車選びは、単なる移動手段の購入ではありません。<br />
+              それは、これからのあなたの生活をより豊かにするためのパートナー選びです。
+            </p>
+            <p>
+              株式会社Beansは、お客様一人ひとりの「欲しい」に徹底的に向き合います。<br />
+              限られた選択肢の中から選ぶのではなく、<br />
+              日本中の膨大な選択肢の中から、あなたに「本当にぴったりな一台」を見つけ出します。
+            </p>
+            <p>親身になって、あなたのカーライフをサポートします。</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Access/Contact Section -->
-    <section id="contact" class="section contact">
-      <div class="container contact-container">
-        <div class="contact-info">
-          <h3>株式会社Beans</h3>
-          <p>〒000-0000<br />○○県○○市○○町1-2-3</p>
-          <p>TEL: 00-0000-0000</p>
-          <p>営業時間: 10:00 - 19:00 (定休日: 水曜)</p>
-          <div class="map-placeholder">Google Maps Area</div>
+    <!-- Support Section (6 - Payment & Support) -->
+    <section id="support" class="section support">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Support</h2>
+          <p class="section-subtitle">安心のサポート体制</p>
         </div>
-        <div class="contact-form-wrapper">
-          <h3>お問い合わせ</h3>
-          <p>
-            お車探しのご依頼、支払いプランのご相談など、お気軽にお問い合わせください。
-          </p>
-          <form class="contact-form">
-            <input type="text" placeholder="お名前" required />
-            <input type="email" placeholder="メールアドレス" required />
-            <input type="tel" placeholder="電話番号" />
-            <textarea
-              placeholder="お問い合わせ内容"
-              rows="5"
-              required
-            ></textarea>
-            <button type="submit" class="btn btn-primary full-width">
-              送信する
-            </button>
-          </form>
+        <div class="service-grid">
+          <!-- Financial Support -->
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-hand-holding-heart"></i>
+            </div>
+            <h3>お支払いサポート</h3>
+            <p>
+              「ローンが通るか心配...」そんなお悩みをお持ちの方も、まずはご相談ください。<br />
+              お客様一人ひとりの状況に合わせた、無理のないお支払いプランを一緒に考えさせていただきます。<br />
+              <small>※ 秘密厳守・相談無料</small>
+            </p>
+          </div>
+          <!-- After Support -->
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            <h3>アフターサポート</h3>
+            <p>
+              納車して終わりではありません。<br />
+              日々のメンテナンスから車検、万が一のトラブルまで。<br />
+              地域密着ならではのフットワークで、末永くサポートいたします。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Store & Contact Section -->
+    <section id="contact" class="section company-store">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Store & Contact</h2>
+          <p class="section-subtitle">店舗案内・お問い合わせ</p>
+        </div>
+
+        <div class="company-store-layout">
+          <!-- Store Images -->
+          <div class="store-images">
+            <div class="store-image-main">
+              <img src="assets/images/shop_exterior.jpg" alt="店舗外観" />
+            </div>
+            <div class="store-image-sub">
+              <img src="assets/images/shop_interior.jpg" alt="商談スペース" />
+            </div>
+            <div class="store-image-sub">
+              <img src="assets/images/shop_kids.jpg" alt="キッズスペース" />
+            </div>
+          </div>
+
+          <!-- Store Info -->
+          <div class="store-info-card">
+            <h3>株式会社Beans</h3>
+            <p class="store-tagline">
+              お客様にリラックスしていただける、<br />明るく開放的な空間をご用意しております。
+            </p>
+            <ul class="store-features">
+              <li><i class="fa-solid fa-check"></i> 広々とした商談スペース</li>
+              <li><i class="fa-solid fa-check"></i> キッズスペース完備</li>
+              <li><i class="fa-solid fa-check"></i> 駐車場完備</li>
+            </ul>
+            <div class="store-details">
+              <p>
+                <i class="fa-solid fa-location-dot"></i> 〒000-0000
+                ○○県○○市○○町1-2-3
+              </p>
+              <p>
+                <i class="fa-solid fa-clock"></i> 10:00 - 19:00 (定休日: 水曜)
+              </p>
+              <p class="phone-highlight">
+                <i class="fa-solid fa-phone"></i>
+                <a href="tel:00-0000-0000">00-0000-0000</a>
+              </p>
+            </div>
+            <p class="contact-note">
+              お車探しのご依頼、ご相談はお電話にてお気軽にどうぞ。
+            </p>
+            <div class="map-placeholder">Google Maps Area</div>
+          </div>
         </div>
       </div>
     </section>
