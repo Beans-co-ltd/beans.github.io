@@ -7,6 +7,7 @@
     "test": "jest",
     "test:html": "html-validate index.html",
     "test:css": "stylelint \"**/*.css\" --ignore-pattern node_modules",
+    "test:smoke": "bash __tests__/smoke.test.sh",
     "test:all": "npm run test:html && npm run test:css && jest"
   },
   "devDependencies": {
