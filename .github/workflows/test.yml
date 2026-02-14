@@ -31,3 +31,6 @@ jobs:
 
       - name: Run Jest tests
         run: npx jest --ci --verbose
+
+      - name: Run smoke test (serve & verify)
+        run: npm run test:smoke
