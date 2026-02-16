@@ -875,3 +875,49 @@ img {
   color: var(--color-text-light);
   line-height: 2;
 }
+
+/* Floating CTA Button */
+.floating-cta {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 28px;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(230, 149, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s,
+    background-color 0.3s, box-shadow 0.3s;
+  pointer-events: none;
+}
+
+.floating-cta.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.floating-cta:hover {
+  background-color: var(--color-accent-light);
+  box-shadow: 0 6px 24px rgba(230, 149, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .floating-cta {
+    bottom: 16px;
+    right: 16px;
+    padding: 14px 22px;
+    font-size: 0.9rem;
+  }
+}

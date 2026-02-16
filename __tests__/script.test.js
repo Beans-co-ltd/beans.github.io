@@ -102,9 +102,11 @@ describe("script.js - DOM interactions", () => {
 
       const expectedSelectors =
         ".section-title, .about-text, .service-card, .step, .contact-container";
-      const expectedCount =
+      const animationTargetCount =
         document.querySelectorAll(expectedSelectors).length;
-      expect(mockObserve.mock.calls.length).toBe(expectedCount);
+      // +1 for the floating CTA observer watching the hero section
+      const floatingCtaObserverCount = document.querySelector("#floating-cta") ? 1 : 0;
+      expect(mockObserve.mock.calls.length).toBe(animationTargetCount + floatingCtaObserverCount);
     });
   });
 

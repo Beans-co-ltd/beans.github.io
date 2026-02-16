@@ -45,6 +45,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Floating CTA Button - show after scrolling past hero
+  const floatingCta = document.querySelector("#floating-cta");
+  const hero = document.querySelector(".hero");
+
+  if (floatingCta && hero) {
+    const ctaObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            floatingCta.classList.remove("is-visible");
+          } else {
+            floatingCta.classList.add("is-visible");
+          }
+        });
+      },
+      { threshold: 0 }
+    );
+    ctaObserver.observe(hero);
+  }
+
   // Scroll Animations (Intersection Observer)
   const observerOptions = {
     threshold: 0.1,
